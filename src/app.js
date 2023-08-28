@@ -1,8 +1,9 @@
 import express from "express";
 import morgan from "morgan";
+import usersrutes from "./routes/user.routes";  
+
 import pkg from "../package.json";
 import { createRoles } from "./libs/initialSetup.js";
-
 import productsRoutes from './routes/products.routes.js'
 import authRoutes from './routes/auth.routes.js'
 
@@ -28,6 +29,7 @@ app.get('/', (req,res) => {
 // Define our routes
 app.use('/api/products',productsRoutes)
 app.use('/api/auth',authRoutes)
+app.use('/api/users', usersrutes)
 
 
 export default app;
