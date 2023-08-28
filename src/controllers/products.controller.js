@@ -24,7 +24,7 @@ export const  getProducById = async (req,res) =>{
 }
 
 export const  updateProducByid = async (req,res) =>{
-    const updateproduct = await Product.findByIdAndUpdate(req.params.producId,req.body,{
+    const updateproduct = await Product.findByIdAndUpdate(req.params.producId , req.body,{
         new: true
     })
     res.status(200).json(updateproduct)
